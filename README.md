@@ -1,6 +1,6 @@
 # Project Title Emma's Small Engines
 
-# Steps to work with GIT:
+# Steps to work with GIT::
 
 # How to clone a repository from GITHUB:
 1. download and install git from https://git-scm.com/
