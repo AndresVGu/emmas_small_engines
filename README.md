@@ -13,7 +13,7 @@
 6.you have download the Emma's Small Engine Repository, now you're all set.
 
 # How to work with this repostory:
-```
+```git
 1.You must have a folder with the repository name. Open this folder with 
 Visual Studio Code
 
