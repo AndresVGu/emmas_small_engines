@@ -71,3 +71,195 @@ header, footer {
   text-decoration: none;
   color: #8A3CBA;  /* No color change */
 }
+
+/*****************/
+
+
+.navButton{
+  text-decoration: none;
+  background-color: white;
+  padding: 15px 10px;
+  margin: 20px;
+  border-radius: 10px;
+  color: #8A3CBA;
+}
+
+.navButton:hover{
+  background-color: black;
+}
+
+button{
+  background-color: #8A3CBA;
+
+}
+#mainRepairs button:hover{
+  background-color: black;
+  color: #8A3CBA;
+
+}
+
+header {
+  background-color: #8A3CBA; 
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+}
+
+.navButton {
+ 
+  margin: 0 10px;
+  text-decoration: none; 
+}
+
+
+.header-content h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+
+nav {
+  display: flex;
+}
+
+.footerDiv{
+  background-color: #8A3CBA;
+  display: inline-block;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 40px;
+}
+
+
+
+
+#completedContainer, #inProgressContainer{
+  float: left;
+  width: 45%;
+  background-color: white;
+  border: #8A3CBA solid 3px;
+  margin: 2.5%;
+  padding-top: 20px;
+  border-radius: 20px
+}
+
+#completedContainer h3, #inProgressContainer h3{
+  display: inline;
+  padding: 5px;
+
+  border-radius: 10px;
+  color: black;
+  text-decoration: underline;
+}
+#completedContainer h5, #inProgressContainer h5{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#mainRepairs{
+
+  text-align: center;
+  
+}
+
+button{
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.subTitle{
+text-align: center;
+}
+
+.addNewButton{
+  background-color: #8A3CBA;
+  border: 2px black solid;
+}
+
+.addNewButton:hover{
+  background-color: white;
+  border: 2px black solid;
+}
+
+
+#equipmentInfo h6, #customerInfo h6 {
+  display: inline-block;
+  width: 100px; 
+  margin: 0;
+  color: black;
+}
+
+#equipmentInfo p, #customerInfo p, .updateButton{
+  display: inline-block;
+  margin: 0;
+  color: black;
+}
+
+#equipmentInfo, #customerInfo, .updateButton{
+  margin: 10px;
+  text-align: center;
+}
+
+
+.equipmentDivs, .customerDivs {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+  margin: 0 auto 40px; 
+  padding: 5px;
+  width: 70%;
+  height: 70px;
+}
+
+#newItem{
+ margin-top: 80px;
+}
+
+.updateButton:hover{
+  color: black;
+}
+
+button a{
+  text-decoration: none;
+  color: black;
+}
+
+.equipmentDivs {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px; 
+}
+
+.equipmentDivs h6 {
+  margin: 0;
+  flex: 1;
+}
+
+.updateEquipment {
+  align-self: flex-end;
+}
+
+.updateButton{
+  background-color: white;
+  border: 2px #8A3CBA solid;
+}
+
+.updateButton:hover{
+
+  border: 2px black solid;
+}
+
+
+
+
+
+
+
+
