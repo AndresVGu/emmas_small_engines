@@ -21,22 +21,43 @@
 <body>
     <!--Header:-->
     <header>
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="header-content">
-                    <img src="img/Web Wiz Creations logo transparent background.png" alt="Logo" class="footer-logo" id="wiz-logo">
-                    <a href="index.html" class="navbar-brand">
-                        <h1>Emma's Small Engines</h1>
-                    </a>
-                </div>
-                <nav>
-                    <a href="index.html" class="header-footer-link pr-2">Home</a>
-                    <a href="equipment.html" class="header-footer-link">Equipment</a>
-                </nav>
-            </div>
+        <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <img src="/pages/img/Web Wiz Creations logo transparent background.png" alt="logo" width="50px">
+            
+          <a class="navbar-brand text-light " href="index.html">
+            Emma's Small Engines
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-light " aria-current="page" href="/pages/Auth/home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light " href="/pages/customer.html">Customer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light " href="/pages/Equipment.html">Equipment</a>
+              </li>
+            
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <a href="#" class="btnIndex">Search</a>
+              
+            </form>
+          </div>
         </div>
+      </nav>
     </header>
     <!--Body:-->
+    <br>
+    <br>
+    <br>
+ 
     <h2 class="subTitle">Customers</h2>
     <main class="container-fluid">
         <button class="addNewButton">
@@ -45,7 +66,7 @@
         <div id="customerInfo"></div>
     </main>
     <!--Footer-->
-    <footer class="navbar fixed-bottom">
+    <footer class="navbar ">
         <div class="container-fluid">
             <p>Emma's Small Engines</p>
             <p>PROG1180-03 | Project Planning & Design</p>
