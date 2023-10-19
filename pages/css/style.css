@@ -183,6 +183,7 @@ text-align: center;
 .addNewButton{
   background-color: #8A3CBA;
   border: 2px black solid;
+  color: #fff;
 }
 
 .addNewButton:hover{
@@ -280,6 +281,10 @@ button a{
 .btnSignIn{
   display: block;
   margin: 10px 40px;
+}
+
+img{
+  width: 50px;
 }
 
 

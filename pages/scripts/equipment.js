@@ -62,7 +62,7 @@ const repairsData = [
     type.innerHTML = `<h6>Type: <br><p id="typeInfo">${r.Type}</p></h6>`;
   
     const update = document.createElement("h5");
-    update.innerHTML = `<button class="updateButton" id="${r.ID}" onclick="handleButtonClick(${r.ID})"><a href="updateCustomer.html">Edit</a></button>`;
+    update.innerHTML = `<button class="updateButton" id="${r.ID}" onclick="handleButtonClick(${r.ID})"><a href="updateEquipment.html">Edit</a></button>`;
   
 
     row.appendChild(name);
@@ -105,3 +105,26 @@ function handleButtonClick(eID) {
     sessionStorage.setItem('equipmentDetails', JSON.stringify(equipmentDetails));
   }
 }
+
+
+
+
+  
+
+
+
+  
+
+
+  
+
+
+
+    
+
+
+
+
+  
+
+  
