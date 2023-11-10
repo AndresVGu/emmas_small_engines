@@ -36,48 +36,6 @@ const customersData = [
     new Customer(20, 'Logan', 'Adams', 'logan@example.com', '890 Elm St', 'LA', '012-345-6789'),
 ];
 
-  
-customersData.forEach(c => {
-    const row = document.createElement("div");
-    row.classList.add("customerDivs"); 
-
-    const fName = document.createElement("h6");
-    fName.innerHTML = `<h6>First Name: <br><p id="nameInfo">${c.FirstName}</p></h6>`;
-  
-    const lName = document.createElement("h6");
-    lName.innerHTML = `<h6>Last Name: <br><p id="ModelInfo">${c.LastName}</p></h6>`;
-  
-    const phone = document.createElement("h6");
-    phone.innerHTML = `<h6>Phone: <br><p id="typeInfo">${c.Phone}</p></h6>`;
-  
-    const street = document.createElement("h6");
-    street.innerHTML = `<h6>Street: <br><p id="colourInfo">${c.Street}</p></h6>`;
-  
-    const province = document.createElement("h6");
-    province.innerHTML = `<h6>Province: <br><p id="manufacturerInfo">${c.Province}</p></h6>`;
-
-    const email = document.createElement("h6");
-    email.innerHTML = `<h6>Email: <br><p id="vinInfo">${c.Email}</p></h6>`;
-
-    const update = document.createElement("h5");
-    update.innerHTML = `<button class="updateButton" id="${c.ID}" onclick="handleButtonClick(${c.ID})"><a href="updateCustomer.html">Edit</a></button>`;
-    
-    row.appendChild(fName);
-    row.appendChild(lName);
-    row.appendChild(phone);
-    row.appendChild(street);
-    row.appendChild(province);
-    row.appendChild(email);
-    row.appendChild(update);
-
-  try{
-    customerInfo.appendChild(row);
-  }
-  catch{}
-    
-});
-
-
 // Handle the button click event
 function handleButtonClick(cID) {
     const matchingCustomers = customersData.find(c => c.ID === cID);
@@ -99,6 +57,62 @@ function handleButtonClick(cID) {
     }
   }
 
+  //DataTable
+  let dataTable;
+  let dataTableIsInitialized = false;
+  
+  const dataTableOptions={
+      pageLength: 5,
+      destroy: true,
+      
+  };
+  
+  const initDataTable = async()=>{
+      if(dataTableIsInitialized){
+          dataTable.destroy();
+      }
+      await listUsers();
+      dataTable = $("#datatable_users").DataTable(dataTableOptions);
+  
+      dataTableIsInitialized = true;
+  };
+  
+  const listUsers = async()=>{
+      try{
+          let content = ``;
+          customersData.forEach((user,index)=>{
+              content +=`
+              <tr>
+                  <td>${index+1}</td>
+                  <td>${user.FirstName + " " + user.LastName}</td>
+                  <td>${user.Phone}</td>
+                  <td>${user.Email}</td>
+                  <td>
+                    <button onclick="handleButtonClick(${index+1})" class="btn btn-sm btn-primary" >
+                      <a href="updateCustomer.html" class="text-light">
+                        <i class="fa-regular fa-pen-to-square" ></i>
+                      </a>
+                    </button>
+
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <a href="#">Details</a>
+                  </td>
+              </tr>`;
+          });
+          tableBody_users.innerHTML = content;
+      }
+      catch(ex){
+          alert(ex);
+      }
+  
+  };
+  window.addEventListener("load",async()=>{
+      await initDataTable();
+  });
 
 
   

@@ -287,6 +287,10 @@ img{
   width: 50px;
 }
 
+.eItem{
+  text-align: center !important;
+  vertical-align: middle !important;
+}
 
 
 

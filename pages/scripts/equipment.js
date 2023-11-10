@@ -17,9 +17,9 @@ class Repair {
   }
 
 const repairsData = [
-    new Repair(1, 'John Smith', 'Lawnmower XYZ-1000', '12345ABC', 'Green', 'ABC Company', 'Lawnmower', 'Performed routine maintenance and oil change', true, true),
+    new Repair(1, 'John Smith', 'Lawnmower XYZ-1000', '12345ABC', 'Green', 'ABC Company', 'Lawnmower', 'Performed routine maintenance and oil change', true, false),
     new Repair(2, 'Jane Doe', 'Generator G-200', '67890DEF', 'Red', 'XYZ Corporation', 'Generator', 'Fixed a carburetor issue and replaced spark plug', false, false),
-    new Repair(3, 'Robert Johnson', 'Lawnmower LM-500', '24680GHI', 'Blue', 'LMN Inc.', 'Lawnmower', 'Replaced damaged blades and sharpened them', true, true),
+    new Repair(3, 'Robert Johnson', 'Lawnmower LM-500', '24680GHI', 'Blue', 'LMN Inc.', 'Lawnmower', 'Replaced damaged blades and sharpened them', true, false),
     new Repair(4, 'Emily Davis', 'Pressure Washer P-10', '13579JKL', 'Yellow', 'ACME Engines', 'Pressure Washer', 'Cleaned the carburetor and changed the oil', false, false),
     new Repair(5, 'William Brown', 'Lawnmower ABC-300', '54321MNO', 'Orange', 'Best Engine Co.', 'Lawnmower', 'Repaired the electric starter motor', true, true),
     new Repair(6, 'Olivia Wilson', 'Tiller T-50', 'AB12CD34', 'Black', 'Engine Pros', 'Tiller', 'Completely rebuilt the engine and replaced worn-out parts', true, false),
@@ -38,7 +38,7 @@ const repairsData = [
     new Repair(19, 'Evelyn Garcia', 'Lawnmower XYZ-300', 'FGHI5678', 'Orange', 'Lawnmower Masters', 'Lawnmower', 'Repaired the self-propel mechanism', false, false),
     new Repair(20, 'Logan Adams', 'Tiller T-10', 'JKLM9012', 'Red', 'Engine Professionals', 'Tiller', 'Replaced the piston for improved engine performance', true, false)
   ];
-
+/*
   repairsData.forEach(r => {
     const row = document.createElement("div");
     row.classList.add("equipmentDivs");
@@ -79,7 +79,7 @@ const repairsData = [
     } catch {}
   });
   
-
+*/
   
 
 // Handle the button click event
@@ -105,6 +105,86 @@ function handleButtonClick(eID) {
     sessionStorage.setItem('equipmentDetails', JSON.stringify(equipmentDetails));
   }
 }
+
+ //DataTable
+ let dataTable;
+ let dataTableIsInitialized = false;
+ 
+ const dataTableOptions={
+  columnDefs:[
+    {className: "eItem", targets: [4,5]}
+    ],
+     pageLength: 5,
+     destroy: true,
+     
+ };
+ 
+ const initDataTable = async()=>{
+     if(dataTableIsInitialized){
+         dataTable.destroy();
+     }
+     await listUsers();
+     dataTable = $("#datatable_equipment").DataTable(dataTableOptions);
+ 
+     dataTableIsInitialized = true;
+ };
+ 
+ const listUsers = async()=>{
+     try{
+         let content = ``;
+         repairsData.forEach((e,index)=>{
+          let check = ``;
+          let check_pickup =``
+          if(e.IsCompleted == true){
+            check =`<i class="fa-regular fa-circle-check" style="color: green;"></i>` ;
+          }
+          else{
+            check =`<i class="fa-regular fa-circle-xmark" style="color: red;"></i>`;
+          }
+
+          if(e.PickedUp == true){
+            check_pickup =`<i class="fa-regular fa-circle-check" style="color: green;"></i>` ;
+          }
+          else{
+            check_pickup =`<i class="fa-regular fa-circle-xmark" style="color: red;"></i>`;
+          }
+          
+
+             content +=`
+             <tr>
+                 <td>${index+1}</td>
+                 <td>${e.Type}</td>
+                 <td>${e.Model}</td>
+                 <td>${e.VinSerial}</td>
+                 <td>${check}</td>
+                 <td>${check_pickup}</td>
+                 <td>
+                   <button onclick="handleButtonClick(${index+1})" class="btn btn-sm btn-primary" >
+                     <a href="updateEquipment.html" class="text-light">
+                       <i class="fa-regular fa-pen-to-square" ></i>
+                     </a>
+                   </button>
+
+                   <button class="btn btn-sm btn-danger">
+                     <i class="fa-regular fa-trash-can"></i>
+                   </button>
+                 </td>
+                 <td>
+                   <a href="#">Details</a>
+                 </td>
+             </tr>`;
+         });
+         tableBody_equipment.innerHTML = content;
+     }
+     catch(ex){
+         alert(ex);
+     }
+ 
+ };
+ window.addEventListener("load",async()=>{
+     await initDataTable();
+ });
+
 
 
 
