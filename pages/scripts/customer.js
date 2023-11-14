@@ -76,11 +76,40 @@ function handleButtonClick(cID) {
   
       dataTableIsInitialized = true;
   };
+
+  function deleteAlert(ID){
+    let fullName = "";
+    customersData.forEach((user,index)=>{
+      if( ID == index+1){
+        fullName += user.FirstName + " " + user.LastName;
+      }
+    });
+    
+    swal({
+      title: "Delete Customer",
+      text: "Are you sure that you want delete: " + fullName,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true
+    })
+    .then((willDelete)=>{
+      if(willDelete){
+        swal(fullName + " has been deleted!",{
+          icon:"success"
+        });
+      }
+      
+    })
+    
+    
+  }
   
   const listUsers = async()=>{
       try{
           let content = ``;
+          
           customersData.forEach((user,index)=>{
+              
               content +=`
               <tr>
                   <td>${index+1}</td>
@@ -94,7 +123,8 @@ function handleButtonClick(cID) {
                       </a>
                     </button>
 
-                    <button class="btn btn-sm btn-danger">
+                    <button class="btn btn-sm btn-danger" 
+                    onclick="deleteAlert(${index+1})">
                       <i class="fa-regular fa-trash-can"></i>
                     </button>
                   </td>
