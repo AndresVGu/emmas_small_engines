@@ -129,7 +129,8 @@ function handleButtonClick(cID) {
                     </button>
                   </td>
                   <td>
-                    <a href="#">Details</a>
+                    <a href="customerDetails.html"
+                    onclick="handleButtonClick(${index+1})">Details</a>
                   </td>
               </tr>`;
           });

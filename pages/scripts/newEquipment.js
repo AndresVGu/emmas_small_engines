@@ -63,13 +63,23 @@ const repairsData = [
         option.value = "";
         option.text = "Select Color";
         color.appendChild(option);
+        let colors = [];
+        let uniqColors =[];
         for(var c in repairsData){
+            colors.push(repairsData[c].Colour);
+        }
+
+        for(let i =0; i < colors.length; i++){
+            if(uniqColors.indexOf(colors[i])=== -1){
+                uniqColors.push(colors[i]);
+            }
+        }
+        for(var c in uniqColors){
             let option = document.createElement("option");
             option.value = c;
-            option.text = repairsData[c].Colour;
+            option.text = uniqColors[c];
             color.appendChild(option);
         }
-   
     }
     catch(ex){
         alert(ex)
@@ -82,10 +92,21 @@ const repairsData = [
         optionManu.value = "";
         optionManu.text = "Select Manufacturer";
         manu.appendChild(optionManu);
+        let manufacturers = [];
+        let uniqManu = [];
         for(var m in repairsData){
+            manufacturers.push(repairsData[m].Manufacturer);
+        }
+        for(let i =0; i< manufacturers.length; i++){
+            if(uniqManu.indexOf(manufacturers[i])
+            === -1){
+                uniqManu.push(manufacturers[i]);
+            }
+        }
+        for(var m in uniqManu){
             let optionManu = document.createElement("option");
             optionManu.value = m;
-            optionManu.text = repairsData[m].Manufacturer;
+            optionManu.text = uniqManu[m];
             manu.appendChild(optionManu);
         }
     }
@@ -100,10 +121,21 @@ const repairsData = [
         optionType.value = "";
         optionType.text = "Select Type";
         eType.appendChild(optionType);
+        let types = [];
+        let uniqTypes = [];
         for(var t in repairsData){
+            types.push(repairsData[t].Type)
+        }
+        for(let i = 0; i< types.length; i++){
+            if(uniqTypes.indexOf(types[i])
+            === -1){
+                uniqTypes.push(types[i]);
+            }
+        }
+        for(var t in uniqTypes){
             let optionType = document.createElement("option");
             optionType.value = t;
-            optionType.text = repairsData[t].Type;
+            optionType.text = uniqTypes[t];
             eType.appendChild(optionType);
         }
     }
