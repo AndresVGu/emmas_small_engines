@@ -64,6 +64,7 @@ function handleButtonClick(cID) {
   const dataTableOptions={
       pageLength: 5,
       destroy: true,
+      lengthMenu: [5,10,15,20]
       
   };
   

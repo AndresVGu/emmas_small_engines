@@ -144,6 +144,7 @@ function deleteAlert(ID){
     ],
      pageLength: 5,
      destroy: true,
+     lengthMenu: [5,10,15,20]
      
  };
  
@@ -200,7 +201,8 @@ function deleteAlert(ID){
                    </button>
                  </td>
                  <td>
-                   <a href="#">Details</a>
+                   <a href="equipmentDetails.html"
+                   onclick="handleButtonClick(${index+1})">Details</a>
                  </td>
              </tr>`;
          });

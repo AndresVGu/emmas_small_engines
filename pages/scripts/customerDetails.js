@@ -14,26 +14,26 @@ class Customer {
 }
 
 const customersData = [
-    new Customer(1, 'John', 'Smith', 'john@example.com', '123 Main St', 'CA', '123-456-7890'),
-    new Customer(2, 'Jane', 'Doe', 'jane@example.com', '456 Elm St', 'NY', '234-567-8901'),
-    new Customer(3, 'Robert', 'Johnson', 'robert@example.com', '789 Oak St', 'TX', '345-678-9012'),
-    new Customer(4, 'Emily', 'Davis', 'emily@example.com', '101 Elmwood Ave', 'WA', '456-789-0123'),
-    new Customer(5, 'William', 'Brown', 'william@example.com', '222 Pine St', 'OR', '567-890-1234'),
-    new Customer(6, 'Olivia', 'Wilson', 'olivia@example.com', '303 Cedar St', 'IL', '678-901-2345'),
-    new Customer(7, 'James', 'Lee', 'james@example.com', '404 Oak St', 'PA', '789-012-3456'),
-    new Customer(8, 'Sophia', 'Martinez', 'sophia@example.com', '555 Birch St', 'MA', '890-123-4567'),
-    new Customer(9, 'Mia', 'Harris', 'mia@example.com', '666 Maple St', 'MI', '901-234-5678'),
-    new Customer(10, 'Alexander', 'Clark', 'alex@example.com', '777 Redwood St', 'OH', '012-345-6789'),
-    new Customer(11, 'Ava', 'Lewis', 'ava@example.com', '888 Spruce St', 'GA', '123-456-7890'),
-    new Customer(12, 'Ethan', 'Turner', 'ethan@example.com', '999 Cedar St', 'CO', '234-567-8901'),
-    new Customer(13, 'Liam', 'Walker', 'liam@example.com', '123 Oakwood Ave', 'NJ', '345-678-9012'),
-    new Customer(14, 'Oliver', 'Scott', 'oliver@example.com', '234 Elmwood Ave', 'NC', '456-789-0123'),
-    new Customer(15, 'Lucas', 'King', 'lucas@example.com', '345 Pine St', 'FL', '567-890-1234'),
-    new Customer(16, 'Aria', 'White', 'aria@example.com', '456 Birch St', 'NV', '678-901-2345'),
-    new Customer(17, 'Mason', 'Turner', 'mason@example.com', '567 Cedar St', 'AZ', '789-012-3456'),
-    new Customer(18, 'Harper', 'Baker', 'harper@example.com', '678 Oak St', 'TN', '890-123-4567'),
-    new Customer(19, 'Evelyn', 'Garcia', 'evelyn@example.com', '789 Pine St', 'OK', '901-234-5678'),
-    new Customer(20, 'Logan', 'Adams', 'logan@example.com', '890 Elm St', 'LA', '012-345-6789'),
+    new Customer(1, 'John', 'Smith', 'john@example.com', '123 Main St', 'Ontario', '123-456-7890'),
+    new Customer(2, 'Jane', 'Doe', 'jane@example.com', '456 Elm St', 'British Columbia', '234-567-8901'),
+    new Customer(3, 'Robert', 'Johnson', 'robert@example.com', '789 Oak St', 'Ontario', '345-678-9012'),
+    new Customer(4, 'Emily', 'Davis', 'emily@example.com', '101 Elmwood Ave', 'Quebec', '456-789-0123'),
+    new Customer(5, 'William', 'Brown', 'william@example.com', '222 Pine St', 'Quebec', '567-890-1234'),
+    new Customer(6, 'Olivia', 'Wilson', 'olivia@example.com', '303 Cedar St', 'Ontario', '678-901-2345'),
+    new Customer(7, 'James', 'Lee', 'james@example.com', '404 Oak St', 'Nova Scotia', '789-012-3456'),
+    new Customer(8, 'Sophia', 'Martinez', 'sophia@example.com', '555 Birch St', 'Alberta', '890-123-4567'),
+    new Customer(9, 'Mia', 'Harris', 'mia@example.com', '666 Maple St', 'Ontario', '901-234-5678'),
+    new Customer(10, 'Alexander', 'Clark', 'alex@example.com', '777 Redwood St', 'Quebec', '012-345-6789'),
+    new Customer(11, 'Ava', 'Lewis', 'ava@example.com', '888 Spruce St', 'Ontario', '123-456-7890'),
+    new Customer(12, 'Ethan', 'Turner', 'ethan@example.com', '999 Cedar St', 'British Columbia', '234-567-8901'),
+    new Customer(13, 'Liam', 'Walker', 'liam@example.com', '123 Oakwood Ave', 'Ontario', '345-678-9012'),
+    new Customer(14, 'Oliver', 'Scott', 'oliver@example.com', '234 Elmwood Ave', 'Ontario', '456-789-0123'),
+    new Customer(15, 'Lucas', 'King', 'lucas@example.com', '345 Pine St', 'Ontario', '567-890-1234'),
+    new Customer(16, 'Aria', 'White', 'aria@example.com', '456 Birch St', 'Alberta', '678-901-2345'),
+    new Customer(17, 'Mason', 'Turner', 'mason@example.com', '567 Cedar St', 'Quebec', '789-012-3456'),
+    new Customer(18, 'Harper', 'Baker', 'harper@example.com', '678 Oak St', 'Quebec', '890-123-4567'),
+    new Customer(19, 'Evelyn', 'Garcia', 'evelyn@example.com', '789 Pine St', 'Nova Scotia', '901-234-5678'),
+    new Customer(20, 'Logan', 'Adams', 'logan@example.com', '890 Elm St', 'Ontario', '012-345-6789'),
 ];
 
 // Retrieve equipment details from session storage
@@ -65,7 +65,10 @@ let dataTable;
 let dataTanleIsInitialized = false;
 
 const dataTableOptions={
-    destroy:true
+    destroy:true,
+    bPaginate: false,
+    bFilter: false,
+    bInfo:false
 };
 
 const initDataTable = async()=>{
