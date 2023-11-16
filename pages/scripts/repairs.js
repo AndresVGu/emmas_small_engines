@@ -57,45 +57,49 @@ class Repair {
   const repairs = [
     new Repair(1, 'Lawn Mower', 'LM001', 'Red', 'Small Engine Co.', 'Regular', 'Starting issue', true, true,false, 0),
     new Repair(2, 'Generator', 'GEN002', 'Blue', 'Small Engine Co.', 'Regular', 'No power output', false, false,true, 0),
-    new Repair(3, 'Chainsaw', 'CS003', 'Green', 'Small Engine Co.', 'Urgent', 'Chain not moving', true, true,false, 0),
-    new Repair(4, 'Leaf Blower', 'LB004', 'Orange', 'Small Engine Co.', 'Regular', 'Starting problem', false, true,true, 0),
-    new Repair(5, 'Pressure Washer', 'PW005', 'Yellow', 'Small Engine Co.', 'Regular', 'Low pressure', true, true,false, 0),
-    new Repair(6, 'Snow Blower', 'SB006', 'White', 'Small Engine Co.', 'Urgent', 'Not throwing snow', false, false,false, 0),
-    new Repair(7, 'Edger', 'ED007', 'Black', 'Small Engine Co.', 'Regular', 'Blade not spinning', true, true,false, 0),
-    new Repair(8, 'Tiller', 'TI008', 'Green', 'Small Engine Co.', 'Urgent', 'Engine not starting', false, false,true, 0),
-    new Repair(9, 'Auger', 'AU009', 'Orange', 'Small Engine Co.', 'Regular', 'Not digging', true, true,false, 0),
-    new Repair(10, 'Cultivator', 'CU010', 'Red', 'Small Engine Co.', 'Regular', 'Engine vibrating', false, true,false, 0),
-    new Repair(11, 'Chipper Shredder', 'CS011', 'Blue', 'Small Engine Co.', 'Urgent', 'Blades jammed', true, false,false, 0),
-    new Repair(12, 'Air Compressor', 'AC012', 'Yellow', 'Small Engine Co.', 'Regular', 'No air output', false, true,false, 0),
-    new Repair(13, 'Water Pump', 'WP013', 'Green', 'Small Engine Co.', 'Regular', 'No water flow', true, true,false, 0),
-    new Repair(14, 'Rototiller', 'RT014', 'Orange', 'Small Engine Co.', 'Urgent', 'Blades not spinning', false, false,false, 0),
-    new Repair(15, 'Concrete Saw', 'CS015', 'Red', 'Small Engine Co.', 'Regular', 'Not cutting', true, true,false, 0),
-    new Repair(16, 'Power Screed', 'PS016', 'Blue', 'Small Engine Co.', 'Urgent', 'Vibrating excessively', false, true,false,0),
-    new Repair(17, 'Pump Sprayer', 'PS017', 'Yellow', 'Small Engine Co.', 'Regular', 'No pressure', true, true,false, 0),
-    new Repair(18, 'Grass Trimmer', 'GT018', 'Red', 'Small Engine Co.', 'Regular', 'String not feeding', false, true,false, 0),
-    new Repair(19, 'Hedge Trimmer', 'HT019', 'Blue', 'Small Engine Co.', 'Urgent', 'Blades dull', true, false,false, 0),
-    new Repair(20, 'Lawn Edger', 'LE020', 'Green', 'Small Engine Co.', 'Regular', 'Not edging properly', true, true,false, 0),
-    new Repair(21, 'Backpack Blower', 'BB021', 'Orange', 'Small Engine Co.', 'Regular', 'Starting issue', false, true,false, 0),
-    new Repair(22, 'Concrete Vibrator', 'CV022', 'Red', 'Small Engine Co.', 'Urgent', 'No vibration', true, false,false, 0),
-    new Repair(23, 'Power Cutter', 'PC023', 'Blue', 'Small Engine Co.', 'Regular', 'Not cutting well', true, true,false, 0),
-    new Repair(24, 'Tampers', 'TA024', 'Green', 'Small Engine Co.', 'Regular', 'Not compacting', false, true,false, 0),
-    new Repair(25, 'Small Engine Parts', 'SEP025', 'Yellow', 'Small Engine Co.', 'Urgent', 'Parts missing', true, false,false, 0)
+    new Repair(3, 'Chainsaw', 'CS003', 'Green', 'Small Engine Co.', 'Urgent', 'Chain not moving', true, true,false, 1),
+    new Repair(4, 'Leaf Blower', 'LB004', 'Orange', 'Small Engine Co.', 'Regular', 'Starting problem', false, true,true, 2),
+    new Repair(5, 'Pressure Washer', 'PW005', 'Yellow', 'Small Engine Co.', 'Regular', 'Low pressure', true, true,false, 3),
+    new Repair(6, 'Snow Blower', 'SB006', 'White', 'Small Engine Co.', 'Urgent', 'Not throwing snow', false, false,false, 4),
+    new Repair(7, 'Edger', 'ED007', 'Black', 'Small Engine Co.', 'Regular', 'Blade not spinning', true, true,false, 4),
+    new Repair(8, 'Tiller', 'TI008', 'Green', 'Small Engine Co.', 'Urgent', 'Engine not starting', false, false,true, 5),
+    new Repair(9, 'Auger', 'AU009', 'Orange', 'Small Engine Co.', 'Regular', 'Not digging', true, true,false, 6),
+    new Repair(10, 'Cultivator', 'CU010', 'Red', 'Small Engine Co.', 'Regular', 'Engine vibrating', false, true,false, 6),
+    new Repair(11, 'Chipper Shredder', 'CS011', 'Blue', 'Small Engine Co.', 'Urgent', 'Blades jammed', true, false,false, 7),
+    new Repair(12, 'Air Compressor', 'AC012', 'Yellow', 'Small Engine Co.', 'Regular', 'No air output', false, true,false, 8),
+    new Repair(13, 'Water Pump', 'WP013', 'Green', 'Small Engine Co.', 'Regular', 'No water flow', true, true,false, 8),
+    new Repair(14, 'Rototiller', 'RT014', 'Orange', 'Small Engine Co.', 'Urgent', 'Blades not spinning', false, false,false, 9),
+    new Repair(15, 'Concrete Saw', 'CS015', 'Red', 'Small Engine Co.', 'Regular', 'Not cutting', true, true,false, 10),
+    new Repair(16, 'Power Screed', 'PS016', 'Blue', 'Small Engine Co.', 'Urgent', 'Vibrating excessively', false, true,false,11),
+    new Repair(17, 'Pump Sprayer', 'PS017', 'Yellow', 'Small Engine Co.', 'Regular', 'No pressure', true, true,false, 12),
+    new Repair(18, 'Grass Trimmer', 'GT018', 'Red', 'Small Engine Co.', 'Regular', 'String not feeding', false, true,false, 12),
+    new Repair(19, 'Hedge Trimmer', 'HT019', 'Blue', 'Small Engine Co.', 'Urgent', 'Blades dull', true, false,false, 13),
+    new Repair(20, 'Lawn Edger', 'LE020', 'Green', 'Small Engine Co.', 'Regular', 'Not edging properly', true, true,false, 14),
+    new Repair(21, 'Backpack Blower', 'BB021', 'Orange', 'Small Engine Co.', 'Regular', 'Starting issue', false, true,false, 15),
+    new Repair(22, 'Concrete Vibrator', 'CV022', 'Red', 'Small Engine Co.', 'Urgent', 'No vibration', true, false,false, 16),
+    new Repair(23, 'Power Cutter', 'PC023', 'Blue', 'Small Engine Co.', 'Regular', 'Not cutting well', true, true,false, 17),
+    new Repair(24, 'Tampers', 'TA024', 'Green', 'Small Engine Co.', 'Regular', 'Not compacting', false, true,false, 18),
+    new Repair(25, 'Small Engine Parts', 'SEP025', 'Yellow', 'Small Engine Co.', 'Urgent', 'Parts missing', true, false,false, 19)
   ];
-
-  /*function addCustomerID(repairsArray, customerArray)
+/*
+  let name = ``
+  function addCustomerID(repairsArray, customerArray)
 {
   customerArray.forEach(c => {
     for(let i = 0; i < c.RepairID.length; i++){
       let customerRepairRelationship = repairsArray.find(r => r.ID == c.RepairID[i])
       if (customerRepairRelationship) {
         customerRepairRelationship.CustomerID = c.ID;
+        
+        
       }
     }
   });
 }
+
 addCustomerID(repairs, customers)
 
-
+/*
 // Convert arrays to strings using JSON.stringify and save them in sessionStorage
 sessionStorage.setItem('customers', JSON.stringify(customers));
 
@@ -105,13 +109,13 @@ sessionStorage.setItem('repairs', JSON.stringify(repairs));
  //DataTable
  let dataTable;
  let dataTableIsInitialized = false;
- 
+  
  const dataTableOptions={
-     pageLength: 5,
-     destroy: true,
-     lengthMenu: [5,10,15,20]
-     
- };
+    pageLength: 5,
+    destroy: true,
+    lengthMenu: [5,10,15,20]
+    
+};
  
  const initDataTable = async()=>{
      if(dataTableIsInitialized){
@@ -125,6 +129,7 @@ sessionStorage.setItem('repairs', JSON.stringify(repairs));
  
  const listUsers = async()=>{
      try{
+
          let content = ``;
          repairs.forEach((r,index)=>{
           let check = ``;
@@ -134,19 +139,14 @@ sessionStorage.setItem('repairs', JSON.stringify(repairs));
           else{
             check =`<i class="fa-regular fa-circle-xmark" style="color: red;"></i>`;
           }
-          let name = ``;
-          let rindex = "";
-
-        for(var i in customers.RepairID){
-            rindex += i;
-            console.log(rindex);
-        }
           
-          customers.forEach((c, indexc)=>{
-            
-            
-            if(index == c.RepairID){
-                name +=`${c.FirstName}`;
+          
+        let name = ``;
+         customers.forEach((c, indexc)=>{
+           
+            //console.log(c.RepairID);
+            if(r.CustomerID == indexc){
+                name +=`${c.FirstName + " " + c.LastName}`;
             }
             
           })
