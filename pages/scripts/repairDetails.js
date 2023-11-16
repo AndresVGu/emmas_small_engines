@@ -1,4 +1,3 @@
-
 class Customer {
     constructor(ID, FirstName, LastName, Email, Street, Province, Phone, RepairID) {
         this.ID = ID;
@@ -81,132 +80,144 @@ class Repair {
     new Repair(24, 'Tampers', 'TA024', 'Green', 'Small Engine Co.', 'Regular', 'Not compacting', false, true,false, 18),
     new Repair(25, 'Small Engine Parts', 'SEP025', 'Yellow', 'Small Engine Co.', 'Urgent', 'Parts missing', true, false,false, 19)
   ];
-/*
-  let name = ``
-  function addCustomerID(repairsArray, customerArray)
-{
-  customerArray.forEach(c => {
-    for(let i = 0; i < c.RepairID.length; i++){
-      let customerRepairRelationship = repairsArray.find(r => r.ID == c.RepairID[i])
-      if (customerRepairRelationship) {
-        customerRepairRelationship.CustomerID = c.ID;
-        
-        
-      }
-    }
-  });
+  const storedRepairs = sessionStorage.getItem('repairs');
+  const repairDetails = JSON.parse(storedRepairs);
+
+  const storedCustomer = sessionStorage.getItem('customer');
+  const customerDetails = JSON.parse(storedCustomer);
+
+  const storedEquipmentDetails = sessionStorage.getItem('equipmentDetails');
+const equipmentDetails = JSON.parse(storedEquipmentDetails);
+
+
+
+  let rIndice = equipmentDetails.ID;
+
+  // model
+function model(id){
+    let eModel = "";
+    repairs.forEach((e,index)=>{
+        if(id == index +1){
+            eModel += e.Model;
+        }
+    });
+    fModel = document.getElementById("model");
+    fModel.innerHTML = eModel;
+
 }
+  //technician
+  const nombres = ["Juan", "María", "Carlos", "Laura", "Pedro", "Ana"];
+  const apellidos = ["García", "López", "Rodríguez", "Martínez", "Fernández", "Pérez"];
 
-addCustomerID(repairs, customers)
-*/// Handle the button click event
-function handleButtonClick(eID) {
-    const matchingEquipment = repairs.find(e => e.ID === eID);
-    
-    if (matchingEquipment) {
-      // Create an object to store equipment details
-      const equipmentDetails = {
-        ID: matchingEquipment.ID,
-        CustomerName: matchingEquipment.CustomerName,
-        Model: matchingEquipment.Model,
-        VinSerial: matchingEquipment.VinSerial,
-        Colour: matchingEquipment.Colour,
-        Manufacturer: matchingEquipment.Manufacturer,
-        Type: matchingEquipment.Type,
-        NotesDesc: matchingEquipment.NotesDesc,
-        IsCompleted: matchingEquipment.IsCompleted,
-        PickedUp: matchingEquipment.PickedUp,
-      };
-  
-      // Store the equipment details in session storage
-      sessionStorage.setItem('equipmentDetails', JSON.stringify(equipmentDetails));
-      sessionStorage.setItem('customers', JSON.stringify(customers));
-
-sessionStorage.setItem('repairs', JSON.stringify(repairs));
-    }
+  function generarNombreAleatorio() {
+    const nombreAleatorio = nombres[Math.floor(Math.random() * nombres.length)];
+    const apellidoAleatorio = apellidos[Math.floor(Math.random() * apellidos.length)];
+    return `${nombreAleatorio} ${apellidoAleatorio}`;
   }
-
-// Convert arrays to strings using JSON.stringify and save them in sessionStorage
-
-
-
- //DataTable
- let dataTable;
- let dataTableIsInitialized = false;
   
- const dataTableOptions={
-    pageLength: 5,
-    destroy: true,
-    lengthMenu: [5,10,15,20]
-    
-};
- 
- const initDataTable = async()=>{
-     if(dataTableIsInitialized){
-         dataTable.destroy();
-     }
-     await listUsers();
-     dataTable = $("#datatable_repairs").DataTable(dataTableOptions);
- 
-     dataTableIsInitialized = true;
- };
- 
- const listUsers = async()=>{
-     try{
+  const techName = generarNombreAleatorio();
+  console.log(techName);
 
-         let content = ``;
-         repairs.forEach((r,index)=>{
-          let check = ``;
-          if(r.IsCompleted == true){
-            check =`<i class="fa-regular fa-circle-check" style="color: green;"></i>` ;
-          }
-          else{
-            check =`<i class="fa-regular fa-circle-xmark" style="color: red;"></i>`;
-          }
-          
-          
-        let name = ``;
+  document.getElementById("tech").innerHTML = techName;
+  ///STARTDATE
+  function generarFechaAleatoria() {
+    const fechaInicio = new Date('2022-01-01'); // 1 de enero de 2022
+    const fechaFin = new Date(); // Fecha actual
+  
+    const tiempoAleatorio = Math.random() * (fechaFin.getTime() - fechaInicio.getTime()) + fechaInicio.getTime();
+    const fechaAleatoria = new Date(tiempoAleatorio);
+  
+    return fechaAleatoria;
+  }
+  
+  // Ejemplo de uso
+  const startDate = generarFechaAleatoria().toDateString();
+  
+  //END DATE
+  function generarFechaAleatoriaEnd() {
+    const fechaInicio = new Date(startDate); // 1 de enero de 2022
+    const fechaFin = new Date('2024-01-01'); // Fecha actual
+  
+    const tiempoAleatorio = Math.random() * (fechaFin.getTime() - fechaInicio.getTime()) + fechaInicio.getTime();
+    const fechaAleatoria = new Date(tiempoAleatorio);
+  
+    return fechaAleatoria;
+  }
+  
+  // Ejemplo de uso
+  const endDate = generarFechaAleatoriaEnd().toDateString();
+  //DataTable
+let dataTable;
+let dataTableIsInitialized = false;
+
+const dataTableOptions = {
+    destroy:true,
+    bPaginate: false,
+    bFilter: false,
+    bInfo:false
+};
+
+const initDataTable = async() =>{
+    if(dataTableIsInitialized){
+        dataTable.destroy();
+    }
+    await listEquipment(rIndice);
+    dataTable = $("#datatable_users").dataTable(dataTableOptions);
+    dataTableIsInitialized = true;
+}
+//Equipment
+const listEquipment = async(id)=>{
+    try{
+        let content = ``;
+        repairs.forEach((e, index)=>{
+            let check = ``;
+            let check_pickup =``
+
+            let name = ``;
          customers.forEach((c, indexc)=>{
            
             //console.log(c.RepairID);
-            if(r.CustomerID == indexc){
+            if(e.CustomerID == indexc){
                 name +=`${c.FirstName + " " + c.LastName}`;
             }
             
           })
-          
-             content +=`
-             <tr>
-                 <td>${index+1}</td>
-                 <td>${r.Model}</td>
-                 <td>${name}</td>
-                 <td>${r.VinSerial}</td>
-                 <td>${r.Type}</td>
-                 <td>${check}</td>
-                 <td>
-                   <button onclick="handleButtonClick(${index+1})" class="btn btn-sm btn-primary" >
-                     <a href="#" class="text-light">
-                       <i class="fa-regular fa-pen-to-square" ></i>
-                     </a>
-                   </button>
 
-                   <button class="btn btn-sm btn-danger"
-                   onclick="deleteAlert(${index+1})">
-                     <i class="fa-regular fa-trash-can"></i>
-                   </button>
-                 </td>
-                 <td>
-                   <a href="repairDetails.html"
-                   onclick="handleButtonClick(${index+1})">Details</a>
-                 </td>
-             </tr>`;
-         });
-         tableBody_equipment.innerHTML = content;
-     }
-     catch(ex){
-         alert(ex);
-     }
- 
- };
- window.addEventListener("load",async()=>{
-     await initDataTable();
- });
+            if(index+1 == id){
+                if(e.PickedUp == true){
+                    check_pickup =`<i class="fa-regular fa-circle-check" style="color: green;"></i>` ;
+                }
+                else{
+                    check_pickup =`<i class="fa-regular fa-circle-xmark" style="color: red;"></i>`;
+                    }
+                content += `
+                <tr>
+                    <td>${index +1}</td>
+                    <td>${e.Model}</td>
+                    <td>${name}</td>
+                    <td>${startDate}</td>
+                    <td>${endDate}</td>
+                    <td>${e.VinSerial}</td>
+                    <td>${techName}</td>
+                    <td>${e.Colour}</td>
+                    <td>${e.Type}</td>
+                    <td>${e.NotesDesc}</td>
+                    <td>${e.IsCompleted}</td>
+                    <td>${check_pickup}</td>
+                    <td>${e.Warranty}</td>
+                    
+                </tr>
+                `;
+            }
+        });
+        tableBody_repair.innerHTML = content;
+
+    }
+    catch(ex){
+        alert(ex)
+    }
+}
+window.addEventListener("load",async()=>{
+    await initDataTable();
+    model(rIndice);
+})
