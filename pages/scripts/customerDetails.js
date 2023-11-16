@@ -1,3 +1,4 @@
+
 const customerInfo = document.getElementById('customerInfo');
 
 
@@ -59,6 +60,7 @@ function FullName(id){
     fname = document.getElementById("name");
     fname.innerHTML = fullName;
 }
+
 
 //DataTable
 let dataTable;
