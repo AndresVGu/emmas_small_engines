@@ -106,6 +106,34 @@ function handleButtonClick(eID) {
   }
 }
 
+//Alert
+function deleteAlert(ID){
+  let model = "";
+  repairsData.forEach((e,index)=>{
+    if( ID == index+1){
+      model += e.Model;
+    }
+  });
+  
+  swal({
+    title: "Delete Equipment",
+    text: "Are you sure that you want delete: " + model,
+    icon: "warning",
+    buttons: true,
+    dangerMode: true
+  })
+  .then((willDelete)=>{
+    if(willDelete){
+      swal(model + " has been deleted!",{
+        icon:"success"
+      });
+    }
+    
+  })
+  
+  
+}
+
  //DataTable
  let dataTable;
  let dataTableIsInitialized = false;
@@ -116,6 +144,7 @@ function handleButtonClick(eID) {
     ],
      pageLength: 5,
      destroy: true,
+     lengthMenu: [5,10,15,20]
      
  };
  
@@ -156,6 +185,7 @@ function handleButtonClick(eID) {
                  <td>${e.Type}</td>
                  <td>${e.Model}</td>
                  <td>${e.VinSerial}</td>
+                 <td>${e.Colour}</td>
                  <td>${check}</td>
                  <td>${check_pickup}</td>
                  <td>
@@ -165,12 +195,14 @@ function handleButtonClick(eID) {
                      </a>
                    </button>
 
-                   <button class="btn btn-sm btn-danger">
+                   <button class="btn btn-sm btn-danger"
+                   onclick="deleteAlert(${index+1})">
                      <i class="fa-regular fa-trash-can"></i>
                    </button>
                  </td>
                  <td>
-                   <a href="#">Details</a>
+                   <a href="equipmentDetails.html"
+                   onclick="handleButtonClick(${index+1})">Details</a>
                  </td>
              </tr>`;
          });
