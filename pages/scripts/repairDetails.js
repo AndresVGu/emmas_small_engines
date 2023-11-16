@@ -121,7 +121,7 @@ function model(id){
   document.getElementById("tech").innerHTML = techName;
   ///STARTDATE
   function generarFechaAleatoria() {
-    const fechaInicio = new Date('2022-01-01'); // 1 de enero de 2022
+    const fechaInicio = new Date('2023-01-01'); // 1 de enero de 2022
     const fechaFin = new Date(); // Fecha actual
   
     const tiempoAleatorio = Math.random() * (fechaFin.getTime() - fechaInicio.getTime()) + fechaInicio.getTime();
@@ -172,6 +172,7 @@ const listEquipment = async(id)=>{
         repairs.forEach((e, index)=>{
             let check = ``;
             let check_pickup =``
+            let warr = "";
 
             let name = ``;
          customers.forEach((c, indexc)=>{
@@ -190,6 +191,18 @@ const listEquipment = async(id)=>{
                 else{
                     check_pickup =`<i class="fa-regular fa-circle-xmark" style="color: red;"></i>`;
                     }
+                if(e.IsCompleted == true){
+                        check =`<i class="fa-regular fa-circle-check" style="color: green;"></i>` ;
+                }
+                else{
+                        check =`<i class="fa-regular fa-circle-xmark" style="color: red;"></i>`;
+                    }
+                if(e.Warranty == true){
+                    warr = "YES";
+                }
+                else{
+                    warr ="NO";
+                }
                 content += `
                 <tr>
                     <td>${index +1}</td>
@@ -202,9 +215,9 @@ const listEquipment = async(id)=>{
                     <td>${e.Colour}</td>
                     <td>${e.Type}</td>
                     <td>${e.NotesDesc}</td>
-                    <td>${e.IsCompleted}</td>
+                    <td>${check}</td>
                     <td>${check_pickup}</td>
-                    <td>${e.Warranty}</td>
+                    <td>${warr}</td>
                     
                 </tr>
                 `;
