@@ -1,5 +1,5 @@
-const equipmentInfo = document.getElementById('equipmentInfo');
-
+const complete = document.getElementById("completedContainer")
+const inProgress = document.getElementById("inProgressContainer")
 
 class Repair {
     constructor(ID, CustomerName, Model, VinSerial, Colour, Manufacturer, Type, NotesDesc, IsCompleted, PickedUp) {
@@ -15,8 +15,8 @@ class Repair {
       this.PickedUp = PickedUp
     }
   }
-
-const repairsData = [
+  
+  const repairsData = [
     new Repair(1, 'John Smith', 'Lawnmower XYZ-1000', '12345ABC', 'Green', 'ABC Company', 'Lawnmower', 'Performed routine maintenance and oil change', true, true),
     new Repair(2, 'Jane Doe', 'Generator G-200', '67890DEF', 'Red', 'XYZ Corporation', 'Generator', 'Fixed a carburetor issue and replaced spark plug', false, false),
     new Repair(3, 'Robert Johnson', 'Lawnmower LM-500', '24680GHI', 'Blue', 'LMN Inc.', 'Lawnmower', 'Replaced damaged blades and sharpened them', true, true),
@@ -38,93 +38,58 @@ const repairsData = [
     new Repair(19, 'Evelyn Garcia', 'Lawnmower XYZ-300', 'FGHI5678', 'Orange', 'Lawnmower Masters', 'Lawnmower', 'Repaired the self-propel mechanism', false, false),
     new Repair(20, 'Logan Adams', 'Tiller T-10', 'JKLM9012', 'Red', 'Engine Professionals', 'Tiller', 'Replaced the piston for improved engine performance', true, false)
   ];
-
-  repairsData.forEach(r => {
-    const row = document.createElement("div");
-    row.classList.add("equipmentDivs");
-  
-    const name = document.createElement("h6");
-    name.innerHTML = `<h6>Name: <br><p id="nameInfo">${r.CustomerName}</p></h6>`;
-  
-    const model = document.createElement("h6");
-    model.innerHTML = `<h6>Model: <br><p id="ModelInfo">${r.Model}</p></h6>`;
-  
-    const vin = document.createElement("h6");
-    vin.innerHTML = `<h6>VIN/Serial number: <br><p id="vinInfo">${r.VinSerial}</p></h6>`;
-  
-    const colour = document.createElement("h6");
-    colour.innerHTML = `<h6>Colour: <br><p id="colourInfo">${r.Colour}</p></h6>`;
-  
-    const manufacturer = document.createElement("h6");
-    manufacturer.innerHTML = `<h6>Manufacturer: <br><p id="manufacturerInfo">${r.Manufacturer}</p></h6>`;
-  
-    const type = document.createElement("h6");
-    type.innerHTML = `<h6>Type: <br><p id="typeInfo">${r.Type}</p></h6>`;
-  
-    const update = document.createElement("h5");
-    update.innerHTML = `<button class="updateButton" id="${r.ID}" onclick="handleButtonClick(${r.ID})"><a href="updateEquipment.html">Edit</a></button>`;
   
 
-    row.appendChild(name);
-    row.appendChild(model);
-    row.appendChild(vin);
-    row.appendChild(colour);
-    row.appendChild(manufacturer);
-    row.appendChild(type);
+
+
+
+showFiveRepairs(complete, repairsData, true)
+showFiveRepairs(inProgress, repairsData, false)    
+
+function showFiveRepairs(htmlId, repairArray, IsComplete) {
+
+  htmlId.innerHTML = '';
+  let showRepairCount = 0;
   
-    row.append(update);
-  
-    try {
-      equipmentInfo.appendChild(row);
-    } catch {}
+
+  const title = document.createElement('h3');
+  title.textContent = IsComplete ? 'Completed Repairs' : 'In Progress Repairs';
+  htmlId.appendChild(title);
+  repairArray.forEach(cr => {
+    if (cr.IsCompleted === IsComplete && showRepairCount < 5 && cr.PickedUp == false) {
+      const repairEntry = document.createElement('div');
+      const repairHeader = document.createElement('h5');
+      const repairInfo = document.createElement('p');
+      const repairButton = document.createElement('button');
+
+      
+      repairHeader.textContent = `Order Number: ${cr.ID} Name: ${cr.CustomerName}`;
+      repairInfo.textContent = `${cr.Model} | ${cr.VinSerial} | ${cr.Colour} | ${cr.Type}`;
+      repairButton.textContent = IsComplete === true ? "Picked Up" : "Ready For Pick Up";
+      repairButton.value = cr.ID;
+      repairButton.addEventListener('click', () => handleButtonClick(cr.ID, IsComplete, repairArray));
+
+      repairEntry.appendChild(repairHeader);
+      repairEntry.appendChild(repairInfo);
+      repairEntry.appendChild(repairButton);
+      htmlId.appendChild(repairEntry);
+      showRepairCount++;
+    }
   });
-  
-
-  
-
-// Handle the button click event
-function handleButtonClick(eID) {
-  const matchingEquipment = repairsData.find(e => e.ID === eID);
-  
-  if (matchingEquipment) {
-    // Create an object to store equipment details
-    const equipmentDetails = {
-      ID: matchingEquipment.ID,
-      CustomerName: matchingEquipment.CustomerName,
-      Model: matchingEquipment.Model,
-      VinSerial: matchingEquipment.VinSerial,
-      Colour: matchingEquipment.Colour,
-      Manufacturer: matchingEquipment.Manufacturer,
-      Type: matchingEquipment.Type,
-      NotesDesc: matchingEquipment.NotesDesc,
-      IsCompleted: matchingEquipment.IsCompleted,
-      PickedUp: matchingEquipment.PickedUp,
-    };
-
-    // Store the equipment details in session storage
-    sessionStorage.setItem('equipmentDetails', JSON.stringify(equipmentDetails));
-  }
 }
 
 
+// Define a function to handle button click
+function handleButtonClick(repairID, IsComplete, repairData) {
+  let selectedRepair = repairData.find(r => r.ID == repairID)
+  selectedRepair.PickedUp = selectedRepair.IsCompleted ? true : false
 
+  selectedRepair.IsCompleted = true;
 
-  
+  alert(`Repair ${repairID} has been ${IsComplete == true ? "picked up." : "Completed"}`);
 
+  showFiveRepairs(complete, repairsData, true)
+  showFiveRepairs(inProgress, repairsData, false) 
+}
 
-
-  
-
-
-  
-
-
-
-    
-
-
-
-
-  
-
-  
+//new

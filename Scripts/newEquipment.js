@@ -1,5 +1,17 @@
-const complete = document.getElementById("completedContainer")
-const inProgress = document.getElementById("inProgressContainer")
+
+const submitBtn = document.getElementById("submit");
+const cancelBtn = document.getElementById("cancel");
+
+submitBtn.addEventListener('click', ()=>{
+    window.location.href="Equipment.html";
+});
+
+cancelBtn.addEventListener('click', ()=>{
+    window.location.href="Equipment.html";
+});
+
+const equipmentInfo = document.getElementById('equipmentInfo');
+
 
 class Repair {
     constructor(ID, CustomerName, Model, VinSerial, Colour, Manufacturer, Type, NotesDesc, IsCompleted, PickedUp) {
@@ -15,11 +27,11 @@ class Repair {
       this.PickedUp = PickedUp
     }
   }
-  
-  const repairsData = [
-    new Repair(1, 'John Smith', 'Lawnmower XYZ-1000', '12345ABC', 'Green', 'ABC Company', 'Lawnmower', 'Performed routine maintenance and oil change', true, true),
+
+const repairsData = [
+    new Repair(1, 'John Smith', 'Lawnmower XYZ-1000', '12345ABC', 'Green', 'ABC Company', 'Lawnmower', 'Performed routine maintenance and oil change', true, false),
     new Repair(2, 'Jane Doe', 'Generator G-200', '67890DEF', 'Red', 'XYZ Corporation', 'Generator', 'Fixed a carburetor issue and replaced spark plug', false, false),
-    new Repair(3, 'Robert Johnson', 'Lawnmower LM-500', '24680GHI', 'Blue', 'LMN Inc.', 'Lawnmower', 'Replaced damaged blades and sharpened them', true, true),
+    new Repair(3, 'Robert Johnson', 'Lawnmower LM-500', '24680GHI', 'Blue', 'LMN Inc.', 'Lawnmower', 'Replaced damaged blades and sharpened them', true, false),
     new Repair(4, 'Emily Davis', 'Pressure Washer P-10', '13579JKL', 'Yellow', 'ACME Engines', 'Pressure Washer', 'Cleaned the carburetor and changed the oil', false, false),
     new Repair(5, 'William Brown', 'Lawnmower ABC-300', '54321MNO', 'Orange', 'Best Engine Co.', 'Lawnmower', 'Repaired the electric starter motor', true, true),
     new Repair(6, 'Olivia Wilson', 'Tiller T-50', 'AB12CD34', 'Black', 'Engine Pros', 'Tiller', 'Completely rebuilt the engine and replaced worn-out parts', true, false),
@@ -38,57 +50,102 @@ class Repair {
     new Repair(19, 'Evelyn Garcia', 'Lawnmower XYZ-300', 'FGHI5678', 'Orange', 'Lawnmower Masters', 'Lawnmower', 'Repaired the self-propel mechanism', false, false),
     new Repair(20, 'Logan Adams', 'Tiller T-10', 'JKLM9012', 'Red', 'Engine Professionals', 'Tiller', 'Replaced the piston for improved engine performance', true, false)
   ];
+
+  const color = document.getElementById("colora");
+  const manu = document.getElementById("manufacturer");
+  const eType = document.getElementById("equipmentType");
+
+
   
+  const listColors = async()=>{
+    try{
+        let option = document.createElement("option");
+        option.value = "";
+        option.text = "Select Color";
+        color.appendChild(option);
+        let colors = [];
+        let uniqColors =[];
+        for(var c in repairsData){
+            colors.push(repairsData[c].Colour);
+        }
 
-
-
-
-showFiveRepairs(complete, repairsData, true)
-showFiveRepairs(inProgress, repairsData, false)    
-
-function showFiveRepairs(htmlId, repairArray, IsComplete) {
-
-  htmlId.innerHTML = '';
-  let showRepairCount = 0;
-  
-
-  const title = document.createElement('h3');
-  title.textContent = IsComplete ? 'Completed Repairs' : 'In Progress Repairs';
-  htmlId.appendChild(title);
-  repairArray.forEach(cr => {
-    if (cr.IsCompleted === IsComplete && showRepairCount < 5 && cr.PickedUp == false) {
-      const repairEntry = document.createElement('div');
-      const repairHeader = document.createElement('h5');
-      const repairInfo = document.createElement('p');
-      const repairButton = document.createElement('button');
-
-      
-      repairHeader.textContent = `Order Number: ${cr.ID} Name: ${cr.CustomerName}`;
-      repairInfo.textContent = `${cr.Model} | ${cr.VinSerial} | ${cr.Colour} | ${cr.Type}`;
-      repairButton.textContent = IsComplete === true ? "Picked Up" : "Ready For Pick Up";
-      repairButton.value = cr.ID;
-      repairButton.addEventListener('click', () => handleButtonClick(cr.ID, IsComplete, repairArray));
-
-      repairEntry.appendChild(repairHeader);
-      repairEntry.appendChild(repairInfo);
-      repairEntry.appendChild(repairButton);
-      htmlId.appendChild(repairEntry);
-      showRepairCount++;
+        for(let i =0; i < colors.length; i++){
+            if(uniqColors.indexOf(colors[i])=== -1){
+                uniqColors.push(colors[i]);
+            }
+        }
+        for(var c in uniqColors){
+            let option = document.createElement("option");
+            option.value = c;
+            option.text = uniqColors[c];
+            color.appendChild(option);
+        }
     }
+    catch(ex){
+        alert(ex)
+    }
+  }
+
+  const listManufacturers = async()=>{
+    try{
+        let optionManu = document.createElement("option");
+        optionManu.value = "";
+        optionManu.text = "Select Manufacturer";
+        manu.appendChild(optionManu);
+        let manufacturers = [];
+        let uniqManu = [];
+        for(var m in repairsData){
+            manufacturers.push(repairsData[m].Manufacturer);
+        }
+        for(let i =0; i< manufacturers.length; i++){
+            if(uniqManu.indexOf(manufacturers[i])
+            === -1){
+                uniqManu.push(manufacturers[i]);
+            }
+        }
+        for(var m in uniqManu){
+            let optionManu = document.createElement("option");
+            optionManu.value = m;
+            optionManu.text = uniqManu[m];
+            manu.appendChild(optionManu);
+        }
+    }
+    catch(ex){
+        alert(ex)
+    }
+  }
+
+  const listTypes = async()=>{
+    try{
+        let optionType = document.createElement("option");
+        optionType.value = "";
+        optionType.text = "Select Type";
+        eType.appendChild(optionType);
+        let types = [];
+        let uniqTypes = [];
+        for(var t in repairsData){
+            types.push(repairsData[t].Type)
+        }
+        for(let i = 0; i< types.length; i++){
+            if(uniqTypes.indexOf(types[i])
+            === -1){
+                uniqTypes.push(types[i]);
+            }
+        }
+        for(var t in uniqTypes){
+            let optionType = document.createElement("option");
+            optionType.value = t;
+            optionType.text = uniqTypes[t];
+            eType.appendChild(optionType);
+        }
+    }
+    catch(ex){
+        alert(ex)
+    }
+  }
+
+  window.addEventListener("load", async()=>{
+    await listColors();
+    await listManufacturers();
+    await listTypes();
   });
-}
-
-
-// Define a function to handle button click
-function handleButtonClick(repairID, IsComplete, repairData) {
-  let selectedRepair = repairData.find(r => r.ID == repairID)
-  selectedRepair.PickedUp = selectedRepair.IsCompleted ? true : false
-
-  selectedRepair.IsCompleted = true;
-
-  alert(`Repair ${repairID} has been ${IsComplete == true ? "picked up." : "Completed"}`);
-
-  showFiveRepairs(complete, repairsData, true)
-  showFiveRepairs(inProgress, repairsData, false) 
-}
-

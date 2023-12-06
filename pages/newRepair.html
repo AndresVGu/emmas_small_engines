@@ -20,7 +20,7 @@
 <body>
    <div class="box">
     <div class="container mt-5">
-        <h1>Update Equipment</h1>
+        <h1>New Repair</h1>
         <form>
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -47,9 +47,13 @@
                 </div>
     
             <div class="form-group">
-                <label for="manufacturer">Manufacturer:</label>
-                <select class="form-control" id="manufacturer">
-                    </select >
+                <label for="manufacturer">Start Date:</label>
+                <input type="date">
+            </div>
+
+            <div class="form-group">
+                <label for="manufacturer">End Date:</label>
+                <input type="date">
             </div>
     
             <div class="form-group">
@@ -65,7 +69,7 @@
             
         </form>
         <div class="btn">
-            <button type="submit" id="submit" >Update</button>
+            <button type="submit" id="submit" >Create</button>
             <button type="cancel" id="cancel" >Cancel</button>
         </div>
     </div>
@@ -80,8 +84,7 @@
     
 
 <!--Scripts-->
-<script src="/Scripts/newEquipment.js"></script>
-<script src="/Scripts/updateEquipement.js"></script>
+
 <!--Bootstrap javascript connection:-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 

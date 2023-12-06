@@ -1,0 +1,7 @@
+[
+    {"id": 1, "positionName": "Mechanic"},
+    {"id": 2, "positionName": "Service Technician"},
+    {"id": 3, "positionName": "Auto Electrician"},
+    {"id": 4, "positionName": "Engine Specialist"},
+    {"id": 5, "positionName": "Service Advisor"}
+  ]

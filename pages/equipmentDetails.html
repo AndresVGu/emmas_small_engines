@@ -22,81 +22,69 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/dashboard.css">
         
-    <title>Customer</title>
+    <title>Equipment Details</title>
 </head>
 <body>
     
     <!--SideBar-->
-    <div class="sidebar" >
+    <div class="sidebar">
       <a href="#" class="logo">
           <i class='bx bxs-car'></i>
           <div class="logo-name"><span>Emma's</span> Small Engines</div>
       </a>
-      <ul class="side-menu" >
+      <ul class="side-menu">
           
-          <li class="active"data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Customer"><a href="/pages/customer.html" >
+
+          <li><a href="/pages/customer.html">
               <i class="bx bxs-user" ></i>
               Customer
           </a></li>
-
-          <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Equipment"><a href="/pages/Equipment.html">
+          <li class="active"><a href="/pages/Equipment.html">
               <i class="bx bxs-layer" ></i>
               Equipment
           </a></li>
-          <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Repairs"><a href="/pages/repairs.html">
+          <li><a href="/pages/repairs.html">
               <i class="bx bxs-wrench" ></i>
               Repairs
           </a></li>
-
-          <li data-bs-toggle="tooltip-r" data-bs-placement="top" title="Reports" ><a href="/pages/report.html">
-            <i class="bx bxs-report" ></i>
-            Report
-        </a></li>
-
-          <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Log Out">
-            <a href="/index.html" class="log">
-                <i class="bx bxs-log-out fa-solid"></i>
-                LogOut
-            </a>
-          </li>
-          
       </ul>
-
+      <ul class="side-menu">
+          <a href="/pages/Auth/index.html" class="loguot">
+              <i class="bx bxs-log-out fa-solid"></i>
+              LogOut
+          </a>
+      </ul>
   </div>
   <!--End of sidebar-->
-   
+    <!-- Main Content -->
     <div class="content">
       <!-- Navbar -->
       <nav>
-          <i class='bx bx-menu' data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Collapse"></i>
-          <form action="#" >
+          <i class='bx bx-menu'></i>
+          <form action="#">
            
           </form>
-          <input type="checkbox" id="theme-toggle" 
-          
-          hidden>
-          <label for="theme-toggle" class="theme-toggle" 
-          data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Light/Dark Mode"></label>
-          
-          <a href="#" class="notif"
-          data-bs-toggle="tooltip-help" data-bs-placement="top" title="Help">
-              <i class='bx bx-question-mark'></i>
-             
+          <input type="checkbox" id="theme-toggle" hidden>
+          <label for="theme-toggle" class="theme-toggle"></label>
+          <a href="#" class="notif">
+              <i class='bx bx-bell'></i>
+              <span class="count">12</span>
           </a>
-          
+          <a href="#" class="profile">
+              <img src="/pages/img/logo.png">
+          </a>
       </nav>
 
       <!-- End of Navbar -->
-      
-      <!--Content-->
+      <!--Main-->
       <main>
         <div class="header">
             <div class="left">
-                <h1>Customers</h1>
+                <h1>Equipment Details</h1>
+                <h4 id="model"></h4>
             </div>
-            <a href="newCustomer.html" class="report">
-                <i class='bx bx-add-to-queue'></i>
-                <span>Add Customer</span>
+            <a href="/pages/Equipment.html" class="report">
+                <span>Back Equipment List</span>
             </a>
         </div>
 
@@ -107,11 +95,13 @@
                   <thead>
                       <tr>
                           <th>ID</th>
-                          <th>Full Name</th>
-                          <th>Phone Number</th>
-                          <th>Email</th>
-                          <th>Options</th>
-                          <th></th>
+                          <th>Model</th>
+                          <th>VinSerial</th>
+                          <th>Color</th>
+                          <th>Manufacturer</th>
+                          <th>Type</th>
+                          <th>Picked Up</th>
+                          <th>Description</th>
                       </tr>
                   </thead>
                   <tbody id="tableBody_users"></tbody>
@@ -120,15 +110,15 @@
           
       </div>
   </div>
+
       </main>
-    <!--End Content-->
 
     <!--Footer-->
     <footer class=" foot">
         <div class="group-1">
             <div class="box">
                 <figure><a href="#">
-                    <img src="/assets/logoWhite.png" alt="web wizerds white logo">
+                    <img src="/pages/img/logoWhite.png" alt="web wizerds white logo">
                 </a></figure>
             </div>
             <div class="box">
@@ -148,7 +138,6 @@
         </div>
     </footer>
     <!--End Footer-->
-
     <!--JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!--DataTable-->
@@ -159,7 +148,7 @@
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!--Local-->
-    <script src="/Scripts/customer.js"></script>
+    <script src="/Scripts/equipmentDetails.js"></script>
     <script src="/Scripts/dashboard.js"></script>
     </body>
 </html>
