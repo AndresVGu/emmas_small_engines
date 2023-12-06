@@ -1,0 +1,17 @@
+[
+  {"id": 1, "cityName": "Toronto", "province": "Ontario"},
+  {"id": 2, "cityName": "Montreal", "province": "Quebec"},
+  {"id": 3, "cityName": "Vancouver", "province": "British Columbia"},
+  {"id": 4, "cityName": "Calgary", "province": "Alberta"},
+  {"id": 5, "cityName": "Ottawa", "province": "Ontario"},
+  {"id": 6, "cityName": "Edmonton", "province": "Alberta"},
+  {"id": 7, "cityName": "Quebec City", "province": "Quebec"},
+  {"id": 8, "cityName": "Winnipeg", "province": "Manitoba"},
+  {"id": 9, "cityName": "Hamilton", "province": "Ontario"},
+  {"id": 10, "cityName": "Halifax", "province": "Nova Scotia"},
+  {"id": 11, "cityName": "London", "province": "Ontario"},
+  {"id": 12, "cityName": "Victoria", "province": "British Columbia"},
+  {"id": 13, "cityName": "Saskatoon", "province": "Saskatchewan"},
+  {"id": 14, "cityName": "Regina", "province": "Saskatchewan"},
+  {"id": 15, "cityName": "St. John's", "province": "Newfoundland and Labrador"}
+]

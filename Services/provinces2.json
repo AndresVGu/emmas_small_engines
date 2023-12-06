@@ -1,0 +1,15 @@
+[
+    {"id": 1, "province": "Alberta", "abbreviation": "AB"},
+    {"id": 2, "province": "British Columbia", "abbreviation": "BC"},
+    {"id": 3, "province": "Manitoba", "abbreviation": "MB"},
+    {"id": 4, "province": "New Brunswick", "abbreviation": "NB"},
+    {"id": 5, "province": "Newfoundland and Labrador", "abbreviation": "NL"},
+    {"id": 6, "province": "Nova Scotia", "abbreviation": "NS"},
+    {"id": 7, "province": "Ontario", "abbreviation": "ON"},
+    {"id": 8, "province": "Prince Edward Island", "abbreviation": "PE"},
+    {"id": 9, "province": "Quebec", "abbreviation": "QC"},
+    {"id": 10, "province": "Saskatchewan", "abbreviation": "SK"},
+    {"id": 11, "province": "Northwest Territories", "abbreviation": "NT"},
+    {"id": 12, "province": "Nunavut", "abbreviation": "NU"},
+    {"id": 13, "province": "Yukon", "abbreviation": "YT"}
+  ]

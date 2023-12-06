@@ -24,14 +24,14 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
-    min-width: 80%;
+    width: 786px;
+    min-width: 50%;
     min-height: 480px;
 }
 
 .box p{
     font-size: 14px;
-    line-height: 20px;
+    line-height: 50px;
     letter-spacing: 0.3px;
     margin: 20px 0;
 }
@@ -82,7 +82,7 @@ body{
     padding: 10px 15px;
     font-size: 13px;
     border-radius: 8px;
-    width: 100%;
+    width: 50%;
     outline: none;
 }
 
@@ -95,7 +95,7 @@ body{
 
 .sign-in{
     left: 0;
-    width: 50%;
+    width: 100%;
     z-index: 2;
 }
 

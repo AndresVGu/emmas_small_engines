@@ -19,64 +19,76 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!--Custom Stylesheet-->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/dashboard.css">
         
     <title>Customer</title>
 </head>
 <body>
     
     <!--SideBar-->
-    <div class="sidebar">
+    <div class="sidebar" >
       <a href="#" class="logo">
           <i class='bx bxs-car'></i>
           <div class="logo-name"><span>Emma's</span> Small Engines</div>
       </a>
-      <ul class="side-menu">
-          <li><a href="/pages/Auth/dashboard.html"><i class='bx bxs-dashboard'></i>Home</a></li>
-
-          <li class="active"><a href="/pages/customer.html">
+      <ul class="side-menu" >
+          
+          <li class="active"data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Customer"><a href="/pages/customer.html" >
               <i class="bx bxs-user" ></i>
               Customer
           </a></li>
-          <li><a href="/pages/Equipment.html">
+
+          <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Equipment"><a href="/pages/Equipment.html">
               <i class="bx bxs-layer" ></i>
               Equipment
           </a></li>
-          <li><a href="/pages/repairs.html">
+          <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Repairs"><a href="/pages/repairs.html">
               <i class="bx bxs-wrench" ></i>
               Repairs
           </a></li>
+
+          <li data-bs-toggle="tooltip-r" data-bs-placement="top" title="Reports" ><a href="/pages/report.html">
+            <i class="bx bxs-report" ></i>
+            Report
+        </a></li>
+
+          <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Log Out">
+            <a href="/index.html" class="log">
+                <i class="bx bxs-log-out fa-solid"></i>
+                LogOut
+            </a>
+          </li>
+          
       </ul>
-      <ul class="side-menu">
-          <a href="/pages/Auth/index.html" class="loguot">
-              <i class="bx bxs-log-out fa-solid"></i>
-              LogOut
-          </a>
-      </ul>
+
   </div>
   <!--End of sidebar-->
-    <!-- Main Content -->
+   
     <div class="content">
       <!-- Navbar -->
       <nav>
-          <i class='bx bx-menu'></i>
-          <form action="#">
+          <i class='bx bx-menu' data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Collapse"></i>
+          <form action="#" >
            
           </form>
-          <input type="checkbox" id="theme-toggle" hidden>
-          <label for="theme-toggle" class="theme-toggle"></label>
-          <a href="#" class="notif">
-              <i class='bx bx-bell'></i>
-              <span class="count">12</span>
+          <input type="checkbox" id="theme-toggle" 
+          
+          hidden>
+          <label for="theme-toggle" class="theme-toggle" 
+          data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Light/Dark Mode"></label>
+          
+          <a href="#" class="notif"
+          data-bs-toggle="tooltip-help" data-bs-placement="top" title="Help">
+              <i class='bx bx-question-mark'></i>
+             
           </a>
-          <a href="#" class="profile">
-              <img src="/pages/img/logo.png">
-          </a>
+          
       </nav>
 
       <!-- End of Navbar -->
-      <!--Main-->
+      
+      <!--Content-->
       <main>
         <div class="header">
             <div class="left">
@@ -109,13 +121,14 @@
       </div>
   </div>
       </main>
+    <!--End Content-->
 
     <!--Footer-->
     <footer class=" foot">
         <div class="group-1">
             <div class="box">
                 <figure><a href="#">
-                    <img src="/pages/img/logoWhite.png" alt="web wizerds white logo">
+                    <img src="/assets/logoWhite.png" alt="web wizerds white logo">
                 </a></figure>
             </div>
             <div class="box">
@@ -135,6 +148,7 @@
         </div>
     </footer>
     <!--End Footer-->
+
     <!--JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!--DataTable-->
@@ -145,7 +159,7 @@
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!--Local-->
-    <script src="/pages/scripts/customer.js"></script>
-    <script src="/pages/scripts/dashboard.js"></script>
+    <script src="/Scripts/customer.js"></script>
+    <script src="/Scripts/dashboard.js"></script>
     </body>
 </html>

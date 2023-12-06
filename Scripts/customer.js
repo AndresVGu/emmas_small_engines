@@ -118,20 +118,23 @@ function handleButtonClick(cID) {
                   <td>${user.Phone}</td>
                   <td>${user.Email}</td>
                   <td>
-                    <button onclick="handleButtonClick(${index+1})" class="btn btn-sm btn-primary" >
+                    <button onclick="handleButtonClick(${index+1})" class="btn btn-sm btn-primary" 
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Customer">
                       <a href="updateCustomer.html" class="text-light">
                         <i class="fa-regular fa-pen-to-square" ></i>
                       </a>
                     </button>
 
                     <button class="btn btn-sm btn-danger" 
-                    onclick="deleteAlert(${index+1})">
+                    onclick="deleteAlert(${index+1})"
+                    data-bs-toggle="tooltip-delete" data-bs-placement="top" title="Delete Customer">
                       <i class="fa-regular fa-trash-can"></i>
                     </button>
                   </td>
                   <td>
                     <a href="customerDetails.html"
-                    onclick="handleButtonClick(${index+1})">Details</a>
+                    onclick="handleButtonClick(${index+1})"
+                    data-bs-toggle="tooltip-details" data-bs-placement="top" title="Customer Details">Details</a>
                   </td>
               </tr>`;
           });
@@ -142,6 +145,43 @@ function handleButtonClick(cID) {
       }
   
   };
+  // Initialize tooltips at the moment to load the page
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+
+  //Details ToolTip
+  var detailsTooltip = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip-details"]'));
+  var detailsToolTipDisplay = detailsTooltip.map(function(t){
+   return new bootstrap.Tooltip(t);
+  });
+
+  //Delete ToolTip
+  var deleteTooltip = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip-delete"]'));
+  var deleteToolTipDisplay = deleteTooltip.map(function(t){
+   return new bootstrap.Tooltip(t);
+  });
+
+  //Help ToolTip
+  var helpTooltip = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip-help"]'));
+  var helpToolTipDisplay = helpTooltip.map(function(t){
+   return new bootstrap.Tooltip(t);
+  });
+
+    //Mode ToolTip
+    var modeTooltip = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip-mode"]'));
+    var modeToolTipDisplay = modeTooltip.map(function(t){
+     return new bootstrap.Tooltip(t);
+    });
+
+     //Mode ToolTip
+     var rTooltip = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip-r"]'));
+     var rToolTipDisplay = rTooltip.map(function(t){
+      return new bootstrap.Tooltip(t);
+     });
+
+
   window.addEventListener("load",async()=>{
       await initDataTable();
   });
