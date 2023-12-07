@@ -1,0 +1,171 @@
+[
+    {
+        "id": 1,
+        "name": "AutoTech Solutions",
+        "phone": "(555) 123-4567",
+        "email": "autotech@example.com",
+        "address": "123 Main Street",
+        "city": "Toronto",
+        "provinces": "Ontario",
+        "zipCode": "M1A2B3"
+      },
+      {
+        "id": 2,
+        "name": "PowerDrive Parts",
+        "phone": "(555) 234-5678",
+        "email": "powerdrive@example.com",
+        "address": "456 Secondary Street",
+        "city": "Montreal",
+        "provinces": "Quebec",
+        "zipCode": "H2X3Y4"
+      },
+      {
+        "id": 3,
+        "name": "GearMaster Auto",
+        "phone": "(555) 345-6789",
+        "email": "gearmaster@example.com",
+        "address": "789 Tertiary Street",
+        "city": "Vancouver",
+        "provinces": "British Columbia",
+        "zipCode": "V6G1B8"
+      },
+      {
+        "id": 4,
+        "name": "QuickFix Motors",
+        "phone": "(555) 456-7890",
+        "email": "quickfixmotors@example.com",
+        "address": "012 Quaternary Street",
+        "city": "Calgary",
+        "provinces": "Alberta",
+        "zipCode": "T2P4G8"
+      },
+      {
+        "id": 5,
+        "name": "Advanced Auto Supplies",
+        "phone": "(555) 567-8901",
+        "email": "advancedautosupplies@example.com",
+        "address": "345 Quintenary Street",
+        "city": "Ottawa",
+        "provinces": "Ontario",
+        "zipCode": "K1P5L9"
+      },
+      {
+        "id": 6,
+        "name": "Precision Parts Co.",
+        "phone": "(555) 678-9012",
+        "email": "precisionparts@example.com",
+        "address": "678 Sextenary Street",
+        "city": "Edmonton",
+        "provinces": "Alberta",
+        "zipCode": "T5J2N5"
+      },
+      {
+        "id": 7,
+        "name": "EcoDrive Components",
+        "phone": "(555) 789-0123",
+        "email": "ecodrive@example.com",
+        "address": "901 Septenary Street",
+        "city": "Quebec City",
+        "provinces": "Quebec",
+        "zipCode": "G1V4B3"
+      },
+      {
+        "id": 8,
+        "name": "TechGear Solutions",
+        "phone": "(555) 890-1234",
+        "email": "techgear@example.com",
+        "address": "234 Octonary Street",
+        "city": "Hamilton",
+        "provinces": "Ontario",
+        "zipCode": "L8N3A1"
+      },
+      {
+        "id": 9,
+        "name": "CityAuto Parts",
+        "phone": "(555) 901-2345",
+        "email": "cityauto@example.com",
+        "address": "567 Nonary Street",
+        "city": "Winnipeg",
+        "provinces": "Manitoba",
+        "zipCode": "R3C0A1"
+      },
+      {
+        "id": 10,
+        "name": "NexGen Motors",
+        "phone": "(555) 012-3456",
+        "email": "nexgenmotors@example.com",
+        "address": "890 Decenary Street",
+        "city": "Halifax",
+        "provinces": "Nova Scotia",
+        "zipCode": "B3H4R2"
+      },
+      {
+        "id": 11,
+        "name": "Global Auto Solutions",
+        "phone": "(555) 123-4567",
+        "email": "globalauto@example.com",
+        "address": "123 Main Street",
+        "city": "Toronto",
+        "provinces": "Ontario",
+        "zipCode": "M1A2B3"
+      },
+      {
+        "id": 12,
+        "name": "PrimeDrive Parts",
+        "phone": "(555) 234-5678",
+        "email": "primedrive@example.com",
+        "address": "456 Secondary Street",
+        "city": "Montreal",
+        "provinces": "Quebec",
+        "zipCode": "H2X3Y4"
+      },
+      {
+        "id": 13,
+        "name": "ProGear Auto",
+        "phone": "(555) 345-6789",
+        "email": "progearauto@example.com",
+        "address": "789 Tertiary Street",
+        "city": "Vancouver",
+        "provinces": "British Columbia",
+        "zipCode": "V6G1B8"
+      },
+      {
+        "id": 14,
+        "name": "SwiftFix Motors",
+        "phone": "(555) 456-7890",
+        "email": "swiftfixmotors@example.com",
+        "address": "012 Quaternary Street",
+        "city": "Calgary",
+        "provinces": "Alberta",
+        "zipCode": "T2P4G8"
+      },
+      {
+        "id": 15,
+        "name": "Elite Auto Supplies",
+        "phone": "(555) 567-8901",
+        "email": "eliteautosupplies@example.com",
+        "address": "345 Quintenary Street",
+        "city": "Ottawa",
+        "provinces": "Ontario",
+        "zipCode": "K1P5L9"
+      },
+      {
+        "id": 16,
+        "name": "Ultimate Parts Co.",
+        "phone": "(555) 678-9012",
+        "email": "ultimateparts@example.com",
+        "address": "678 Sextenary Street",
+        "city": "Edmonton",
+        "provinces": "Alberta",
+        "zipCode": "T5J2N5"
+      },
+      {
+        "id": 17,
+        "name": "GreenDrive Components",
+        "phone": "(555) 789-0123",
+        "email": "greendrive@example.com",
+        "address": "901 Septenary Street",
+        "city": "Quebec City",
+        "provinces": "Quebec",
+        "zipCode": "G1V4B3"
+      }]

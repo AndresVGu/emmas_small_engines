@@ -60,11 +60,218 @@
  
 }
 
+/*||||MODAL||||*/
+.top{
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .30);
+  display: grid;
+  place-items: center;
+  transition: .4s;
+}
+
+.close{
+  top: 5em;
+  left: 70%;
+}
+.translate{
+  transform: translateY(-100%);
+}
+
+.boxm{
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  min-width: 80%;
+  min-height: 480px;
+  padding-bottom: 25px;
+  margin-bottom: 400px;
+}
+
+.boxm h2{
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
 
 
 
+.boxm button{
+  background-color: #8A3CBA;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.boxm button:hover{
+  background-color:#8a3cba87;
+  color: #fff;
+}
+
+.boxm #cancel{
+  background-color: #8a3cba87;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.boxm #cancel:hover{
+  background-color: #8A3CBA;
+  color: #fff;
+}
+
+form{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+/*HOVER BUTTONS*/
+/*||||MODAL||||*/
+.tope{
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .30);
+  display: grid;
+  place-items: center;
+  transition: .4s;
+}
+
+.close{
+  top: 5em;
+  left: 70%;
+}
+.translateE{
+  transform: translateY(-100%);
+}
+
+.boxme{
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  min-width: 80%;
+  min-height: 480px;
+  padding-bottom: 25px;
+  margin-bottom: 400px;
+}
+
+.boxme h2{
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
 
 
+
+.boxme button{
+  background-color: #8A3CBA;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.boxme button:hover{
+  background-color:#8a3cba87;
+  color: #fff;
+}
+
+.boxme #cancel{
+  background-color: #8a3cba87;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.boxme #cancel:hover{
+  background-color: #8A3CBA;
+  color: #fff;
+}
+
+/*roles*/
+.boxme-rol{
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  min-width: 60%;
+  min-height: 300px;
+  padding-bottom: 25px;
+  margin-bottom: 400px;
+}
+
+.boxme-rol h2{
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
+.checkbox-container{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.boxme-rol button{
+  background-color: #8A3CBA;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.boxme-rol button:hover{
+  background-color:#8a3cba87;
+  color: #fff;
+}
+
+.boxme-rol #cancel{
+  background-color: #8a3cba87;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.boxme-rol #cancel:hover{
+  background-color: #8A3CBA;
+  color: #fff;
+}
+
+.button-container{
+  text-align: center;
+}
 
 
 

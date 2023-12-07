@@ -4,7 +4,7 @@ const provinces = document.getElementById("provinces");
 
 const listProvinces = async()=>{
     try{
-        const response = await fetch("provinces.json");
+        const response = await fetch("/services/provinces.json");
         const data = await response.json();
         let option = document.createElement("option");
         option.value = "";

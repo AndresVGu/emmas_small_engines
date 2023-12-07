@@ -157,7 +157,7 @@ function handleButtonClick(cID) {
     });
     
     swal({
-      title: "Delete Customer",
+      title: "Delete Supplier",
       text: "Are you sure that you want delete: " + fullName,
       icon: "warning",
       buttons: true,
@@ -178,22 +178,27 @@ function handleButtonClick(cID) {
   
   const listUsers = async()=>{
       try{
-        const response = await fetch("/services/customer.json");
+        const response = await fetch("/services/suppliers.json");
         const users = await response.json();
+       
         
           let content = ``;
           
           users.forEach((user,index)=>{
-              
+           
               content +=`
               <tr>
                   <td>${index+1}</td>
-                  <td>${user.customerFirstName + " "+ user.customerMiddleName+" " + user.customerLastName}</td>
-                  <td>${user.customerPhone}</td>
-                  <td>${user.customerEmail}</td>
+                  <td>${user.name}</td>
+                  <td>${user.phone}</td>
+                  <td>${user.email}</td>
+                  <td>${user.address}</td>
+                  <td>${user.city}</td>
+                  <td>${user.provinces}</td>
+                  <td>${user.zipCode}</td>
                   <td>
                     <button onclick="handleButtonClick(${index+1}),ModalEdit()"  class="btn btn-sm btn-primary" 
-                    data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Customer">
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Supplier">
                       
                         <i class="fa-regular fa-pen-to-square" ></i>
                       
@@ -201,15 +206,11 @@ function handleButtonClick(cID) {
 
                     <button class="btn btn-sm btn-danger" 
                     onclick="deleteAlert(${index+1})"
-                    data-bs-toggle="tooltip-delete" data-bs-placement="top" title="Delete Customer">
+                    data-bs-toggle="tooltip-delete" data-bs-placement="top" title="Delete Supplier">
                       <i class="fa-regular fa-trash-can"></i>
                     </button>
                   </td>
-                  <td>
-                    <a href="customerDetails.html"
-                    onclick="handleButtonClick(${index+1})"
-                    data-bs-toggle="tooltip-details" data-bs-placement="top" title="Customer Details">Details</a>
-                  </td>
+                  
               </tr>`;
           });
           tableBody_users.innerHTML = content;

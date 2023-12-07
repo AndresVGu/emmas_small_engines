@@ -1,7 +1,8 @@
 [
-    {"id": 1, "positionName": "Mechanic"},
-    {"id": 2, "positionName": "Service Technician"},
-    {"id": 3, "positionName": "Auto Electrician"},
-    {"id": 4, "positionName": "Engine Specialist"},
-    {"id": 5, "positionName": "Service Advisor"}
+    {"id": 1, "positionName": "Owner"},
+    {"id": 2, "positionName": "Admin"},
+    {"id": 3, "positionName": "Supervisor"},
+    {"id": 4, "positionName": "Technician"},
+    {"id": 5, "positionName": "Sales"},
+    {"id": 6, "positionName": "Security"}
   ]
