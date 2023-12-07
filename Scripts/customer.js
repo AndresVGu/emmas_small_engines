@@ -62,7 +62,7 @@ function handleButtonClick(cID) {
   let dataTableIsInitialized = false;
   
   const dataTableOptions={
-      pageLength: 5,
+      pageLength: 10,
       destroy: true,
       lengthMenu: [5,10,15,20]
       
@@ -104,19 +104,23 @@ function handleButtonClick(cID) {
     
     
   }
+
   
   const listUsers = async()=>{
       try{
+        const response = await fetch('Scripts/provinces.json');
+        const usersData = await  response.json();
+        console.log(usersData);
           let content = ``;
-          
-          customersData.forEach((user,index)=>{
+         /* 
+          users.forEach((user,index)=>{
               
               content +=`
               <tr>
                   <td>${index+1}</td>
-                  <td>${user.FirstName + " " + user.LastName}</td>
-                  <td>${user.Phone}</td>
-                  <td>${user.Email}</td>
+                  <td>${user.customerFirstName + " " + user.customerLastName}</td>
+                  <td>${user.customerPhone}</td>
+                  <td>${user.customerEmail}</td>
                   <td>
                     <button onclick="handleButtonClick(${index+1})" class="btn btn-sm btn-primary" 
                     data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Customer">
@@ -138,7 +142,7 @@ function handleButtonClick(cID) {
                   </td>
               </tr>`;
           });
-          tableBody_users.innerHTML = content;
+          tableBody_users.innerHTML = content;*/
       }
       catch(ex){
           alert(ex);
