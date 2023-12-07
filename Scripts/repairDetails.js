@@ -206,6 +206,7 @@ const listEquipment = async(id)=>{
                 content += `
                 <tr>
                     <td>${index +1}</td>
+                    <td>${warr}</td>
                     <td>${e.Model}</td>
                     <td>${name}</td>
                     <td>${startDate}</td>
@@ -217,7 +218,7 @@ const listEquipment = async(id)=>{
                     <td>${e.NotesDesc}</td>
                     <td>${check}</td>
                     <td>${check_pickup}</td>
-                    <td>${warr}</td>
+                    
                     
                 </tr>
                 `;

@@ -27,42 +27,58 @@
 <body>
     
     <!--SideBar-->
-    <div class="sidebar">
-      <a href="#" class="logo">
-          <i class='bx bxs-car'></i>
-          <div class="logo-name"><span>Emma's</span> Small Engines</div>
-      </a>
-      <ul class="side-menu">
-          
-          <li><a href="/pages/customer.html">
-              <i class="bx bxs-user" ></i>
-              Customer
+    <div class="sidebar" >
+        <a href="#" class="logo">
+            <i class='bx bxs-car'></i>
+            <div class="logo-name"><span>Emma's</span> Small Engines</div>
+        </a>
+        <ul class="side-menu" >
+            
+            <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Customer"><a href="/pages/customer.html" >
+                <i class="bx bxs-user" ></i>
+                Customer
+            </a></li>
+  
+            <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Orders Requests"><a href="/pages/Orders.html" >
+              <i class="bx bxs-notepad" ></i>
+              Orders
           </a></li>
-          <li><a href="/pages/Equipment.html">
-              <i class="bx bxs-layer" ></i>
-              Equipment
+  
+            <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Equipment"><a href="/pages/Equipment.html">
+                <i class="bx bxs-layer" ></i>
+                Equipment
+            </a></li>
+            <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Repairs"><a href="/pages/repairs.html">
+                <i class="bx bxs-wrench" ></i>
+                Repairs
+            </a></li>
+  
+            <li class="active" data-bs-toggle="tooltip-r" data-bs-placement="top" title="Reports" ><a href="/pages/report.html">
+              <i class="bx bxs-report" ></i>
+              Reports
           </a></li>
-          <li><a href="/pages/repairs.html">
-              <i class="bx bxs-wrench" ></i>
-              Repairs
+  
+          <li data-bs-toggle="tooltip-r" data-bs-placement="top" title="Suppliers" ><a href="/pages/suppliers.html">
+              <i class="bx bxs-truck" ></i>
+              Suppliers
           </a></li>
-          <li class="active"><a href="#">
-            <i class="bx bxs-report" ></i>
-            Report
-        </a></li>
-          <li>
-            <a href="/index.html" class="log">
-                <i class="bx bxs-log-out fa-solid"></i>
-                LogOut
-            </a>
-          </li>
-          
-      </ul>
-      <ul class="side-menu">
-          
-      </ul>
-  </div>
-  <!--End of sidebar-->
+  
+          <li data-bs-toggle="tooltip-r" data-bs-placement="top" title="Manage Roles" ><a href="/pages/roles.html">
+              <i class="bx bxs-cog" ></i>
+              Manage Roles
+          </a></li>
+  
+            <li data-bs-toggle="tooltip-mode" data-bs-placement="top" title="Log Out">
+              <a href="/index.html" class="log">
+                  <i class="bx bxs-log-out fa-solid"></i>
+                  LogOut
+              </a>
+            </li>
+            
+        </ul>
+  
+    </div>
+    <!--End of sidebar-->
     <!-- Main Content -->
     <div class="content">
       <!-- Navbar -->
@@ -83,6 +99,86 @@
 
       <!-- End of Navbar -->
       <!--Main-->
+      <!--Main-->
+      <main>
+        <div class="header">
+            <div class="left">
+                <h1>Report </h1>
+                <h4 id="model"></h4>
+            </div>
+            
+        </div>
+
+        <div class="search-container">
+            <label>Filter:</label>
+            <input type="text" id="searchInput" placeholder="Search...">
+            <input type="date" placeholder="Start Date">
+            <input type="date" placeholder="End Date">
+            <button type="button" onclick="search()" class="btn btn-primary"
+            data-bs-toggle="tooltip-help" data-bs-placement="top" title="Save Report Seleceted">Save</button>
+            <button type="button" class="btn btn-primary" onclick="clearSearch()"
+            data-bs-toggle="tooltip-help" data-bs-placement="top" title="Prit Report Selected">Print</button>
+        </div>
+        
+            
+       
+        <div class=" my-4">
+            <div class="row">
+                <div class="col-sm-12 col m-md-12 col-lg-12 col-xl-12">
+                    <table id="datatable_repairs" class="table">
+                        <thead>
+
+                            <tr>
+                                <th>Report Name</th>
+                                <th>Note</th>
+                                <th>Date</th>
+                                
+                                <th>Download Report</th>
+                            </tr>
+
+                            <tr>
+                                <td data-bs-toggle="tooltip-help" data-bs-placement="top" title="View Report"><a href="/pages/warrantyf.html">Warranty Report</a></td>
+                                <td>Get Warranty reports</td>
+                                <td>03-12-2023</td>
+                            
+                                <td><butto class="btn btn-primary"
+                                    data-bs-toggle="tooltip-help" data-bs-placement="top" title="Download Report">Download</button></td>
+                            </tr>
+
+                            <tr>
+                                <td  data-bs-toggle="tooltip-help" data-bs-placement="top" title="View Report"><a href="/pages/progress.html">Weekly Report</a></td>
+                                <td>Weekly Revenue</td>
+                                <td>12-10-2023</td>
+                            
+                                <td><button class="btn btn-primary"
+                                    data-bs-toggle="tooltip-help" data-bs-placement="top" title="Download Report">Download</button></td>
+                            </tr>
+
+                            <tr>
+                                <td  data-bs-toggle="tooltip-help" data-bs-placement="top" title="View Report"><a href="/pages/progress.html">Inventory Report</a></td>
+                                <td>Get inventory quantities</td>
+                                <td>03-12-2023</td>
+                            
+                                <td><button class="btn btn-primary"
+                                    data-bs-toggle="tooltip-help" data-bs-placement="top" title="Download Report">Download</button></td>
+                            </tr>
+                            
+                            
+                        </thead>
+                        
+                           
+                            
+                        <tbody id="tableBody_equipment"></tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+
+   
+  </div>
+
+      </main>
       <main>
         <div class="header">
             <div class="left">

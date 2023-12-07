@@ -177,11 +177,12 @@ sessionStorage.setItem('repairs', JSON.stringify(repairs));
              content +=`
              <tr>
                  <td>${index+1}</td>
+                 <td>${check}</td>
                  <td>${r.Model}</td>
                  <td>${name}</td>
                  <td>${r.VinSerial}</td>
                  <td>${r.Type}</td>
-                 <td>${check}</td>
+                 
                  <td>
                    <button onclick="handleButtonClick(${index+1})" class="btn btn-sm btn-primary" >
                      <a href="#" class="text-light">
